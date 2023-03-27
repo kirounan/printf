@@ -45,7 +45,7 @@ int print_int(va_list lalista)
 	int num, count = 0;
 	unsigned int unum;
 
-	number = va_arg(lalista, int);
+	num = va_arg(lalista, int);
 	if (num < 0)
 	{
 		unum = num * -1;
@@ -59,4 +59,17 @@ int print_int(va_list lalista)
 		count = print_num(unum, count);
 	}
 	return (count - 1);
+}
+/**
+* print_rot13 - function that converts a string into rot 13 format
+*@lalista: input of specific format
+*Return: length of string
+*/
+int print_rot13(va_list lalista)
+{
+	char *c;
+	c = va_arg(lalista, char *);
+	if (c)
+		return 2;
+	return 3;
 }
