@@ -19,7 +19,7 @@ int formatOutput(va_list lalista, const char *format)
 			{
 				case 'c':
 					c = va_arg(lalista, int);
-				       	putchar(c);
+					putchar(c);
 					i++;
 					break;
 				case 's':
