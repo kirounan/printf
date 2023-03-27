@@ -60,6 +60,7 @@ int print_int(va_list lalista)
 	}
 	return (count - 1);
 }
+
 /**
 * print_rot13 - function that converts a string into rot 13 format
 *@lalista: input of specific format
@@ -68,6 +69,7 @@ int print_int(va_list lalista)
 int print_rot13(va_list lalista)
 {
 	char *c;
+
 	c = va_arg(lalista, char *);
 	if (c)
 		return 2;
