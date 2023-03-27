@@ -36,7 +36,7 @@ int print_num(unsigned int n, int c)
 }
 
 /**
-* print_integer - function that print integer
+* print_int - function that print integer
 *@lalista: list of integer
 *Return: length of integer
 */

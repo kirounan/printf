@@ -1,11 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * pickformat - choose format of input
+ * formatOutput - choose format of input
  * @lalista: list of parameters to print
  * @format: input format
  * Return: integer length of output
- *
  **/
 int formatOutput(va_list lalista, const char *format)
 {
