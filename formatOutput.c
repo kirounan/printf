@@ -25,7 +25,6 @@ int formatOutput(va_list lalista, const char *format)
 					break;
 				case 's':
 					n += print_str(lalista);
-					n--;
 					i++;
 					break;
 				case '%':
@@ -38,7 +37,6 @@ int formatOutput(va_list lalista, const char *format)
 				case 'd':
 				case 'i':
 					n += print_int(lalista);
-					n--;
 					i++;
 					break;
 				case 'R':
