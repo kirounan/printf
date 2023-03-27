@@ -75,3 +75,35 @@ int print_rot13(va_list lalista)
 		return 2;
 	return 3;
 }
+/**
+ * print_b - this function print binaries
+ * Description: this function prints integer in binary
+ * @args: arguments
+ * @buffer: Buffer
+ * Return: len of buffer
+ */
+int print_b(va_list args)
+{
+	int len, i;
+	unsigned int number;
+	int result[32];
+
+	number = va_arg(args, unsigned int);
+
+	if (number == 0)
+	{
+		print_num(0, 0);
+		return (1);
+	}
+	for (len = 0; number > 0; len++)
+	{
+		result[len] = number % 2;
+		number = number / 2;
+	}
+
+	for (i = len - 1; i >= 0; i--)
+	{
+		print_num(result[i], 0);
+	}
+	return (len);
+}

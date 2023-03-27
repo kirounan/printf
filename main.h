@@ -12,5 +12,6 @@ int print_str(va_list lalista);
 int print_int(va_list lalista);
 int print_num(unsigned int n, int c);
 int print_rot13(va_list lalista);
+int print_b(va_list args);
 
 #endif

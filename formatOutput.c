@@ -38,6 +38,10 @@ int formatOutput(va_list lalista, const char *format)
 					n += print_int(lalista);
 					i++;
 					break;
+				case 'b':
+					n += print_b(lalista);
+					i++;
+					break;
 				case 'R':
 					n += print_rot13(lalista);
 					n--;
