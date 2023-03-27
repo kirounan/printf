@@ -105,5 +105,5 @@ int print_b(va_list args)
 	{
 		print_num(result[i], 0);
 	}
-	return (len);
+	return (len - 1);
 }
