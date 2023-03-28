@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 /**
 * print_str - prints string
 *@lalista: list of string
@@ -242,4 +243,77 @@ int print_X(va_list args)
 			print_num(result[i], 0);
 	}
 	return (len - 1);
+}
+/**
+ * print_hexa - Prints hexadecimals in uppercase
+ * Description: This function prints hexadecimals in uppsercase
+ * @s: char to hexa
+ * @buffer: Buffer
+ * Return: length of @s
+ */
+int print_hexa(char s)
+{
+	char number;
+	int len, len2, i, result[32];
+
+	len2 = 0;
+
+	number = s;
+	if (number <= 16)
+	{
+		putchar('0');
+		len2++;
+	}
+	for (len = 0; number > 0; len++)
+	{
+		result[len] = number % 16;
+		number = number / 16;
+	}
+	for (i = len - 1; i >= 0; i--)
+	{
+		if (result[i] >= 10)
+			putchar(result[i] + 55);
+		else
+			print_num(result[i], 0);
+	}
+	return (len + len2);
+}
+
+/**
+ * print_S - Prints the string or hexa
+ * Descripton -  this function prints the hexa of non valid chars
+ * @args: Argument to print
+ * Return: length of string
+ */
+int print_S(va_list args)
+{
+	char *s = va_arg(args, char *);
+	int len, i, c;
+
+	c = 0;
+	if (s)
+	{
+		len = strlen(s);
+		for (i = 0; i < len; i++)
+			if (*(s + i) < 32 || *(s + i) >= 127)
+			{
+				putchar('\\');
+				c++;
+				putchar('x');
+				if (*(s + i) == '\0')
+					c += print_hexa(0);
+				else
+					c += print_hexa(*(s + i));
+			}
+			else
+				putchar(*(s + i));
+	}
+	else
+	{
+		len = 6;
+		s = "(null)";
+		for (i = 0; i < len; i++)
+			putchar(*(s + i));
+	}
+	return (len + c - 1);
 }
