@@ -177,7 +177,7 @@ int print_o(va_list args)
 	}
 	for (i = len - 1; i >= 0; i--)
 		print_num(result[i], 0);
-	return (len);
+	return (len - 1);
 }
 
 /**
