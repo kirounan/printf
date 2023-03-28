@@ -317,3 +317,60 @@ int print_S(va_list args)
 	}
 	return (len + c - 1);
 }
+/**
+ * print_hex2 - Prints hexadecimal numbers
+ * Description: This function prints numbers in hexadecimal
+ * @number: Number to print
+ * Return: length of input
+ */
+int print_hex2(unsigned long number)
+{
+	long len, i, result[32];
+
+	if (number == 0)
+	{
+		print_num(0, 0);
+		return (1);
+	}
+	for (len = 0; number > 0; len++)
+	{
+		result[len] = number % 16;
+		number = number / 16;
+	}
+	for (i = len - 1; i >= 0; i--)
+	{
+		if (result[i] >= 10)
+			putchar(result[i] + 87);
+		else
+			putchar(result[i] + 48);
+	}
+	return (len);
+}
+
+/**
+ * print_p - Prints address of memory
+ * Description: This function prints memmory addresses
+ * @args: Arguments
+ * Return: Length of address
+ */
+int print_p(va_list args)
+{
+	int len = 2, i;
+	char *s;
+	unsigned long p = (unsigned long) va_arg(args, void *);
+
+	if (p)
+	{
+		putchar('0');
+		putchar('x');
+		len += print_hex2(p);
+	}
+	else
+	{
+		len = 5;
+		s = "(nil)";
+		for (i = 0; i < len; i++)
+			putchar(*(s + i));
+	}
+	return (len - 1);
+}

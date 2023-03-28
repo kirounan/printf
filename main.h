@@ -20,5 +20,7 @@ int print_X(va_list args);
 int print_number_u(unsigned int);
 int print_hexa(char s);
 int print_S(va_list args);
+int print_p(va_list args);
+int print_hexa2(char s);
 
 #endif
