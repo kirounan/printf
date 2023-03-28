@@ -69,12 +69,38 @@ int print_int(va_list lalista)
 */
 int print_rot13(va_list lalista)
 {
-	char *c;
+	int i, j;
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char r[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *c, *str;
 
 	c = va_arg(lalista, char *);
-	if (c)
-		return 2;
-	return 3;
+	if (c == NULL)
+		return (0);
+	str = malloc(1024);
+	if (str == NULL)
+		return (-1);
+	for (i = 0; c[i] != '\0'; i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (c[i] == a[j])
+			{
+				str[i] = r[j];
+				break;
+			}
+			else
+			{
+				str[i] = c[i];
+			}
+		}
+	}
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	free(str);
+	return (i - 1);
 }
 /**
  * print_b - this function print binaries

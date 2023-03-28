@@ -44,7 +44,6 @@ int formatOutput(va_list lalista, const char *format)
 					break;
 				case 'R':
 					n += print_rot13(lalista);
-					n--;
 					i++;
 					break;
 				case 'u':
