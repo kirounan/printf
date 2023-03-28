@@ -68,7 +68,7 @@ int formatOutput(va_list lalista, const char *format)
 					i++;
 					break;
 				case 'p':
-					p += print_p(lalista);
+					n += print_p(lalista);
 					i++;
 					break;
 				default:
