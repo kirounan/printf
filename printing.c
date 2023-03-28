@@ -400,3 +400,30 @@ int print_p(va_list args)
 	}
 	return (len - 1);
 }
+/**
+ * print_r - Prints a string in reverse order
+ * Description: This function prints a string in reverse
+ * order
+ * @args: String to print
+ * Return: length of string
+ */
+int print_r(va_list args)
+{
+	char *s = va_arg(args, char *);
+	int len, i;
+
+	if (s)
+	{
+		len = strlen(s);
+		for (i = len - 1; i >= 0; i--)
+			putchar(*(s + i));
+	}
+	else
+	{
+		len = 6;
+		s = "(null)";
+		for (i = 0; i < len; i++)
+		putchar(*(s + i));
+	}
+	return (len - 1);
+}

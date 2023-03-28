@@ -22,5 +22,6 @@ int print_hexa(char s);
 int print_S(va_list args);
 int print_p(va_list args);
 int print_hexa2(char s);
+int print_r(va_list args);
 
 #endif
