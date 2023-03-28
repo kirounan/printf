@@ -97,7 +97,7 @@ int print_rot13(va_list lalista)
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		putchar(str[i]);
 	}
 	free(str);
 	return (i - 1);
